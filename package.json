@@ -1,0 +1,49 @@
+{
+  "name": "@brewerwall/logo",
+  "version": "1.0.0",
+  "description": "Brewerwall Logo",
+  "main": "build/index.js",
+  "peerDependencies": {
+    "react": "^16.4.0"
+  },
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brewerwall/brewerwall-logo-component.git"
+  },
+  "keywords": [
+    "brewerwall",
+    "logo",
+    "component",
+    "react"
+  ],
+  "author": "Ben Griffith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brewerwall/brewerwall-logo-component/issues"
+  },
+  "homepage": "https://github.com/brewerwall/brewerwall-logo-component#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "react": "^16.10.2",
+    "webpack": "^4.41.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/runtime": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "react-svg-loader": "^3.0.3",
+    "webpack-cli": "^3.3.9",
+    "react-dom": "^16.8.6",
+    "react-responsive": "^7.0.0"
+  }
+}
