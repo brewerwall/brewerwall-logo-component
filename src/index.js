@@ -5,6 +5,55 @@ import DarkTransparent from "./svg/dark_transparent.svg";
 import LightColor from "./svg/light_color.svg";
 import LightSolid from "./svg/light_solid.svg";
 import LightTransparent from "./svg/light_transparent.svg";
+import { StyleSheet, css } from 'aphrodite';
+
+const title = "BREWERWALL";
+
+const bebasNeueSemiRoundedRegular = {
+    fontFamily: "BebasNeueSemiRoundedRegular",
+    fontStyle: "normal",
+    fontWeight: "bold",
+    src: "url('./fonts/BebasNeueSemiRounded-Regular.eot?#iefix') format('embedded-opentype'), url('./fonts/BebasNeueSemiRounded-Regular.woff') format('woff'), url('./fonts/BebasNeueSemiRounded-Regular.ttf') format('truetype'), url('./fonts/BebasNeueSemiRounded-Regular.svg#BebasNeueSemiRounded-Regular') format('svg')",
+    textRendering: "optimizeLegibility"
+};
+
+const styles = StyleSheet.create({
+    wrapper: {
+        lineHeight: '1.5'
+    },
+    logoTitleBase: {
+        fontFamily: [bebasNeueSemiRoundedRegular],
+        marginLeft: '.1em',
+        lineHeight: '.95em',
+        display: 'inline-block'
+    },
+    logoTitleExtraSmall: {
+        paddingTop: '.30em',
+        fontSize: 22
+    },
+    logoTitleSmall: {
+        paddingTop: '.30em',
+        fontSize: '2.5em'
+    },
+    logoTitleHero: {
+        paddingTop: '.27em',
+        fontSize: '10em'
+    },
+    logoImageBase: {
+        display: 'inline',
+        verticalAlign: 'top',
+        marginTop: 0,
+    },
+    logoImageExtraSmall: {
+        width: 25
+    },
+    logoImageSmall: {
+        width: 40
+    },
+    logoImageHero: {
+        width: 150
+    }
+});
 
 class Logo extends React.Component {
     static defaultProps = {
@@ -15,12 +64,8 @@ class Logo extends React.Component {
     };
     
     render() {
-        var wrapperStyle = {
-            lineHeight: '1.5'
-        }
-
         return (
-            <span style={wrapperStyle}>
+            <span className={css(styles.wrapper)}>
                 {this.getLogoSVG()}
                 {this.getLogoTitle()}
             </span>
@@ -28,100 +73,68 @@ class Logo extends React.Component {
     }
 
     getLogoTitleStyle() {
-        var baseStyle = {
-            fontFamily: 'BebasNeueSemiRoundedRegular',
-            marginLeft: '.1em',
-            lineHeight: '.95em',
-            paddingTop: '.25em',
-            display: 'inline-block',
-            color: this.props.textColor || "black"
-        };
-
         switch (this.props.size) {
             case "extra-small":
-                return {
-                    ...baseStyle,
-                    ...{fontSize: 22}
-                };
+                return css(styles.logoTitleBase, styles.logoTitleExtraSmall, this.getColorStyle());
             case "small":
-                return {
-                    ...baseStyle,
-                    ...{fontSize: '2.5em'}
-                };
+                return css(styles.logoTitleBase, styles.logoTitleSmall, this.getColorStyle());
             case "hero":
-                return {
-                    ...baseStyle,
-                    ...{fontSize: '10em'}
-                };
+                return css(styles.logoTitleBase, styles.logoTitleHero, this.getColorStyle());
             default:
-                return {
-                    ...baseStyle,
-                    ...{fontSize: 36}
-                };
+                return css(styles.logoTitleBase, styles.logoTitleExtraSmall, this.getColorStyle());
         }
     }
 
     getLogoTitle() {
         if(this.props.showTitle){
             return (
-                <span
-                    textColor={this.props.textColor}
-                    style={this.getLogoTitleStyle()}
-                >
-                    BREWERWALL
+                <span className={this.getLogoTitleStyle()}>
+                    {title}
                 </span>
             );
         }
     }
 
     getLogoImageStyle() {
-        var baseStyle = {
-            display: 'inline',
-            verticalAlign: 'top',
-            marginTop: 0,
-        };
-
         switch (this.props.size) {
             case "extra-small":
-                return {
-                    ...baseStyle,
-                    ...{width: 25}
-                };
+                return css(styles.logoImageBase, styles.logoImageExtraSmall);
             case "small":
-                return {
-                    ...baseStyle,
-                    ...{width: 40}
-                };
+                return css(styles.logoImageBase, styles.logoImageSmall);
             case "hero":
-                return {
-                    ...baseStyle,
-                    ...{width: 150}
-                };
+                return css(styles.logoImageBase, styles.logoImageHero);
             default:
-                return {
-                    ...baseStyle,
-                    ...{width: 40}
-                };
+                return css(styles.logoImageBase, styles.logoImageSmall);
         }
     }
 
     getLogoSVG() {
         switch (this.props.type) {
             case "light_color":
-                return (<LightColor alt="logo" style={this.getLogoImageStyle()} />);
+                return (<LightColor alt="logo" className={this.getLogoImageStyle()} />);
             case "light_transparent":
-                return (<LightTransparent alt="logo" style={this.getLogoImageStyle()} />);
+                return (<LightTransparent alt="logo" className={this.getLogoImageStyle()} />);
             case "light_solid":
-                return (<LightSolid alt="logo" style={this.getLogoImageStyle()} />);
+                return (<LightSolid alt="logo" className={this.getLogoImageStyle()} />);
             case "dark_color":
-                return (<DarkColor alt="logo" style={this.getLogoImageStyle()} />);
+                return (<DarkColor alt="logo" className={this.getLogoImageStyle()} />);
             case "dark_transparent":
-                return (<DarkTransparent alt="logo" style={this.getLogoImageStyle()} />);
+                return (<DarkTransparent alt="logo" className={this.getLogoImageStyle()} />);
             case "dark_solid":
-                return (<DarkSolid alt="logo" style={this.getLogoImageStyle()} />);
+                return (<DarkSolid alt="logo" className={this.getLogoImageStyle()} />);
             default:
-                return (<DarkColor alt="logo" style={this.getLogoImageStyle()} width={150} />);;
+                return (<DarkColor alt="logo" className={this.getLogoImageStyle()} width={150} />);;
         }
+    }
+
+    getColorStyle() {
+        var style = StyleSheet.create({
+            myColor: {
+                color: this.props.textColor || "black"
+            }
+        });
+
+        return style.myColor;
     }
 }
 

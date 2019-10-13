@@ -27,7 +27,9 @@
     "url": "https://github.com/brewerwall/brewerwall-logo-component/issues"
   },
   "homepage": "https://github.com/brewerwall/brewerwall-logo-component#readme",
-  "dependencies": {},
+  "dependencies": {
+    "aphrodite": "^2.4.0"
+  },
   "devDependencies": {
     "react": "^16.10.2",
     "webpack": "^4.41.0",
