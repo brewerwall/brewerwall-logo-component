@@ -28,10 +28,14 @@ const styles = StyleSheet.create({
         display: 'inline-block'
     },
     logoTitleExtraSmall: {
-        paddingTop: '.30em',
-        fontSize: 22
+        paddingTop: '.38em',
+        fontSize: "1.45em"
     },
     logoTitleSmall: {
+        paddingTop: '.38em',
+        fontSize: '1.8em'
+    },
+    logoTitleMedium: {
         paddingTop: '.30em',
         fontSize: '2.5em'
     },
@@ -48,6 +52,9 @@ const styles = StyleSheet.create({
         width: 25
     },
     logoImageSmall: {
+        width: 32
+    },
+    logoImageMedium: {
         width: 40
     },
     logoImageHero: {
@@ -78,6 +85,8 @@ class Logo extends React.Component {
                 return css(styles.logoTitleBase, styles.logoTitleExtraSmall, this.getColorStyle());
             case "small":
                 return css(styles.logoTitleBase, styles.logoTitleSmall, this.getColorStyle());
+            case "medium":
+                return css(styles.logoTitleBase, styles.logoTitleMedium, this.getColorStyle());
             case "hero":
                 return css(styles.logoTitleBase, styles.logoTitleHero, this.getColorStyle());
             default:
@@ -101,6 +110,8 @@ class Logo extends React.Component {
                 return css(styles.logoImageBase, styles.logoImageExtraSmall);
             case "small":
                 return css(styles.logoImageBase, styles.logoImageSmall);
+            case "medium":
+                return css(styles.logoImageBase, styles.logoImageMedium);
             case "hero":
                 return css(styles.logoImageBase, styles.logoImageHero);
             default:
