@@ -31,8 +31,6 @@
     "aphrodite": "^2.4.0"
   },
   "devDependencies": {
-    "react": "^16.10.2",
-    "webpack": "^4.41.0",
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -43,9 +41,12 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "react-svg-loader": "^3.0.3",
-    "webpack-cli": "^3.3.9",
+    "file-loader": "^5.0.2",
+    "react": "^16.10.2",
     "react-dom": "^16.8.6",
-    "react-responsive": "^7.0.0"
+    "react-responsive": "^7.0.0",
+    "react-svg-loader": "^3.0.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
   }
 }
