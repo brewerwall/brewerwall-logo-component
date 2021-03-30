@@ -1,6 +1,6 @@
 {
   "name": "@brewerwall/logo",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Brewerwall Logo",
   "main": "build/index.js",
   "peerDependencies": {
