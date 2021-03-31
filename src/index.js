@@ -44,6 +44,10 @@ const styles = StyleSheet.create({
     paddingTop: ".30em",
     fontSize: "3.8em",
   },
+  logoTitleExtraLarge: {
+    paddingTop: ".30em",
+    fontSize: "5.7em",
+  },
   logoTitleHero: {
     paddingTop: ".27em",
     fontSize: "10em",
@@ -64,6 +68,9 @@ const styles = StyleSheet.create({
   },
   logoImageLarge: {
     width: 60,
+  },
+  logoImageExtraLarge: {
+    width: 90,
   },
   logoImageHero: {
     width: 150,
@@ -113,6 +120,12 @@ class Logo extends React.Component {
           styles.logoTitleLarge,
           this.getColorStyle()
         );
+      case "extra-large":
+        return css(
+          styles.logoTitleBase,
+          styles.logoTitleExtraLarge,
+          this.getColorStyle()
+        );
       case "hero":
         return css(
           styles.logoTitleBase,
@@ -144,6 +157,8 @@ class Logo extends React.Component {
         return css(styles.logoImageBase, styles.logoImageMedium);
       case "large":
         return css(styles.logoImageBase, styles.logoImageLarge);
+      case "extra-large":
+        return css(styles.logoImageBase, styles.logoImageExtraLarge);
       case "hero":
         return css(styles.logoImageBase, styles.logoImageHero);
       default:
