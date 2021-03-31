@@ -55,7 +55,7 @@ Default: `black`
 ### Size
 This will render the entire logo and text proportionally to preset sizes.
 
-Options: `extra-small`, `small`, `medium`, `hero`
+Options: `extra-small`, `small`, `medium`, `large`, `hero`
 
 Default: `small`
 ```
